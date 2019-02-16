@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "webpack": "^4.29.2",
+    "webpack": "^4.29.4",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   },
@@ -67,6 +67,7 @@
     "copy-concurrently": "^1.0.5",
     "copy-descriptor": "^0.1.1",
     "core-util-is": "^1.0.2",
+    "cpx": "^1.5.0",
     "create-ecdh": "^4.0.3",
     "create-hash": "^1.2.0",
     "create-hmac": "^1.1.7",
@@ -91,6 +92,7 @@
     "events": "^3.0.0",
     "evp_bytestokey": "^1.0.3",
     "expand-brackets": "^2.1.4",
+    "express": "^4.16.4",
     "extend-shallow": "^2.0.1",
     "extglob": "^2.0.4",
     "fast-deep-equal": "^2.0.1",
@@ -138,6 +140,7 @@
     "json-schema-traverse": "^0.4.1",
     "json5": "^1.0.1",
     "kind-of": "^3.2.2",
+    "loader": "^2.1.1",
     "loader-runner": "^2.4.0",
     "loader-utils": "^1.2.3",
     "locate-path": "^3.0.0",
@@ -162,6 +165,7 @@
     "neo-async": "^2.6.0",
     "node-libs-browser": "^2.2.0",
     "normalize-path": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "object-copy": "^0.1.0",
     "object-visit": "^1.0.1",
     "object.pick": "^1.3.0",
@@ -257,6 +261,8 @@
     "util-deprecate": "^1.0.2",
     "vm-browserify": "^0.0.4",
     "watchpack": "^1.6.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2",
     "webpack-sources": "^1.3.0",
     "worker-farm": "^1.6.0",
     "wrappy": "^1.0.2",
@@ -265,9 +271,15 @@
     "yallist": "^3.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server --hot",
-    "start": "webpack-dev-server --hot"
+    "start:dev": "webpack-dev-server --hot --config webpack.client.js",
+    "dev:build-server": "webpack --config webpack.server.js",
+    "dev:build-client": "webpack --config webpack.client.js",
+    "dev:server": "nodemon build/serverbundle.js",
+    "dev:all": "npm-run-all --serial dev:build-server dev:build-client dev:server",
+    "prod:bundlefordeploy": "webpack --config webpack.client.js",
+    "prod:cleanwwwroot": "rimraf ../WebApp/wwwroot",
+    "prod:copytowwwroot": "cpx 'public/**/*' ../WebApp/wwwroot",
+    "prod:deploy": "npm-run-all --serial prod:bundlefordeploy prod:cleanwwwroot prod:copytowwwroot"
   },
   "author": "",
   "license": "ISC",

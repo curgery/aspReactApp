@@ -81,43 +81,43 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./ClientApp/Components/Client.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./ClientApp/Client.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./ClientApp/Components/Client.js":
-/*!****************************************!*\
-  !*** ./ClientApp/Components/Client.js ***!
-  \****************************************/
+/***/ "./ClientApp/Client.js":
+/*!*****************************!*\
+  !*** ./ClientApp/Client.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouter = __webpack_require__(/*! react-router */ "./node_modules/react-router/es/index.js");
 
 var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
-var _FullPage = __webpack_require__(/*! ./common/FullPage */ "./ClientApp/Components/common/FullPage.js");
+var _FullPage = __webpack_require__(/*! ./Components/common/FullPage */ "./ClientApp/Components/common/FullPage.js");
 
 var _FullPage2 = _interopRequireDefault(_FullPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(
-  _reactRouterDom.BrowserRouter,
-  { history: _reactRouter.browserHistory },
-  _react2.default.createElement(_FullPage2.default, null)
+_reactDom2.default.hydrate(_react2.default.createElement(
+    _reactRouterDom.BrowserRouter,
+    { history: _reactRouter.browserHistory },
+    _react2.default.createElement(_FullPage2.default, null)
 ), document.getElementById("app"));
 
 /***/ }),
@@ -275,7 +275,7 @@ function Footer() {
         _react2.default.createElement(
           "p",
           null,
-          "Code Stars Summit and Silicon Valley Code Camp (tm) are trademarks of 73rd Street Associates (Copyright \xA9"
+          "Code Stars Summit and Silicon Valley Code Camp (tm) are trademarks of 73rd Street Associates (Copyright \xA9 2019)"
         ),
         _react2.default.createElement(
           "p",
@@ -284,7 +284,7 @@ function Footer() {
           _react2.default.createElement(
             "strong",
             null,
-            "PeterKellner.net"
+            "RLGDevelopersLLC.com"
           )
         )
       )
@@ -366,7 +366,7 @@ var FullPage = function (_Component) {
                     null,
                     _react2.default.createElement(_CodeCampMenu2.default, null)
                 ),
-                _react2.default.createElement(_Routes2.default, null),
+                _react2.default.createElement(_Routes2.default, { action: this.handler }),
                 _react2.default.createElement(_Footer2.default, null)
             );
         }
@@ -527,6 +527,37 @@ Home.propTypes = {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = HomeContainer;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _HomeSpeakersCarousel = __webpack_require__(/*! ./HomeSpeakersCarousel */ "./ClientApp/Components/home/HomeSpeakersCarousel.js");
+
+var _HomeSpeakersCarousel2 = _interopRequireDefault(_HomeSpeakersCarousel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function HomeContainer() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'container-main events' },
+    _react2.default.createElement(
+      'div',
+      { className: 'row' },
+      _react2.default.createElement(
+        'div',
+        { className: 'col-12' },
+        _react2.default.createElement(_HomeSpeakersCarousel2.default, null)
+      )
+    )
+  );
+}
+
 /***/ }),
 
 /***/ "./ClientApp/Components/home/HomeHeader.js":
@@ -538,6 +569,595 @@ Home.propTypes = {
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = HomeHeader;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function HomeHeader() {
+  return _react2.default.createElement(
+    "div",
+    { className: "jumbo-events" },
+    _react2.default.createElement(
+      "div",
+      { className: "container-main" },
+      _react2.default.createElement(
+        "div",
+        { className: "row" },
+        _react2.default.createElement(
+          "div",
+          { className: "col-12 col-sm-4 jumbo-events__info" },
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__participants" },
+            "527"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__participants-label" },
+            "Participants"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__when-label" },
+            "When"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__when" },
+            "April 1st 2019"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__where-label" },
+            "Where"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__where" },
+            "Manhattan College, Riverdale, NY"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__directions" },
+            _react2.default.createElement(
+              "a",
+              { href: "" },
+              "See directions"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "col-12 col-sm-8" },
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__title" },
+            "SVCC 2019"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__description" },
+            "Silicon Valley Code Camp is a community event where developers learn from fellow developers. We also have developer related topics that include software branding, legal issues around software as well as other topics developers are interested in hearing about."
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-events__buttons" },
+            _react2.default.createElement(
+              "div",
+              { className: "dropdown" },
+              _react2.default.createElement(
+                "button",
+                {
+                  className: "btn btn-white dropdown-toggle",
+                  type: "button",
+                  id: "dropdownEventsJumbo",
+                  "data-toggle": "dropdown",
+                  "aria-haspopup": "true",
+                  "aria-expanded": "false"
+                },
+                _react2.default.createElement(
+                  "span",
+                  { className: "dropdown__label--registered" },
+                  _react2.default.createElement("i", { className: "fa fa-check", "aria-hidden": "true" }),
+                  " Registered"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                {
+                  className: "dropdown-menu",
+                  "aria-labelledby": "dropdownEventsJumbo"
+                },
+                _react2.default.createElement(
+                  "a",
+                  { className: "dropdown-item", href: "" },
+                  "Interested?"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { className: "dropdown-item", href: "" },
+                  "Register"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { className: "dropdown-item", href: "" },
+                  "Interested"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "", className: "btn btn-primary" },
+              "Update your details"
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+/***/ }),
+
+/***/ "./ClientApp/Components/home/HomeSpeakersCarousel.js":
+/*!***********************************************************!*\
+  !*** ./ClientApp/Components/home/HomeSpeakersCarousel.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = HomeSpeakersCarousel;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function HomeSpeakersCarousel() {
+  return _react2.default.createElement(
+    "div",
+    { className: "speakers-carousel" },
+    _react2.default.createElement(
+      "div",
+      { className: "speakers-carousel__title" },
+      "Meet the speakers"
+    ),
+    _react2.default.createElement(
+      "div",
+      {
+        id: "speakersCarouselIndicators",
+        className: "carousel slide d-flex align-items-center",
+        "data-interval": "false"
+      },
+      _react2.default.createElement(
+        "div",
+        { className: "carousel-inner", role: "listbox" },
+        _react2.default.createElement(
+          "div",
+          { className: "carousel-item  active " },
+          _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker0.png",
+                  alt: "Diane Green"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-name" },
+                  "Diane Green"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-position" },
+                  "Senior Vice President"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-company" },
+                  "Google Cloud"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/rlgava.jpg",
+                  alt: "Marc Andreessen"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-name" },
+                  "RL Glover"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-position" },
+                  "CEO & Founder"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-company" },
+                  "RLG Developer Associates"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker2.png",
+                  alt: "Llewellyn Falco"
+                }),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-name" },
+                    "Llewellyn Falco"
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-position" },
+                    "Inventor of Approval testing"
+                  ),
+                  _react2.default.createElement("div", { className: "speaker-company" })
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker3.png",
+                  alt: "Stefania Kaczmarczyk"
+                }),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-name" },
+                    "Stefania Kaczmarczyk"
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-position" },
+                    "Developer advocate"
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-company" },
+                    "IBM"
+                  )
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "carousel-item " },
+          _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker0.png",
+                  alt: "Diane Green"
+                }),
+                _react2.default.createElement(
+                  "div",
+                  null,
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-name" },
+                    "Diane Green"
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-position" },
+                    "Senior Vice President"
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "speaker-company" },
+                    "Google Cloud"
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-photo" },
+                  _react2.default.createElement("img", {
+                    src: "assets/images/speakers/speaker1.png",
+                    alt: "Marc Andreessen"
+                  })
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-name" },
+                  "Marc Andreessen"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-position" },
+                  "Cofounder and General Partner"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-company" },
+                  "Andreessen Horowitz"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker2.png",
+                  alt: "Llewellyn Falco"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-name" },
+                  "Llewellyn Falco"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-position" },
+                  "Inventor of Approval testing"
+                )
+              ),
+              _react2.default.createElement("div", { className: "speaker-company" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+            _react2.default.createElement(
+              "div",
+              { className: "speaker-photo" },
+              _react2.default.createElement("img", {
+                src: "assets/images/speakers/speaker3.png",
+                alt: "Stefania Kaczmarczyk"
+              })
+            ),
+            _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-name" },
+                "Stefania Kaczmarczyk"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-position" },
+                "Developer advocate"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-company" },
+                "IBM"
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "carousel-item " },
+          _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker0.png",
+                  alt: "Diane Green"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-name" },
+                  "Diane Green"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-position" },
+                  "Senior Vice President"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "speaker-company" },
+                  "Google Cloud"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-photo" },
+                _react2.default.createElement("img", {
+                  src: "assets/images/speakers/speaker1.png",
+                  alt: "Marc Andreessen"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-name" },
+                "Marc Andreessen"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-position" },
+                "Cofounder and General Partner"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-company" },
+                "Andreessen Horowitz"
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+            _react2.default.createElement(
+              "div",
+              { className: "speaker-photo" },
+              _react2.default.createElement("img", {
+                src: "assets/images/speakers/speaker2.png",
+                alt: "Llewellyn Falco"
+              })
+            ),
+            _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-name" },
+                "Llewellyn Falco"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-position" },
+                "Inventor of Approval testing"
+              ),
+              _react2.default.createElement("div", { className: "speaker-company" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-12 col-md-6 d-flex flex-column flex-sm-row align-items-center carousel-speaker-block" },
+            _react2.default.createElement(
+              "div",
+              { className: "speaker-photo" },
+              _react2.default.createElement("img", {
+                src: "assets/images/speakers/speaker3.png",
+                alt: "Stefania Kaczmarczyk"
+              })
+            ),
+            _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-name" },
+                "Stefania Kaczmarczyk"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-position" },
+                "Developer advocate"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "speaker-company" },
+                "IBM"
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "ol",
+          { className: "carousel-indicators" },
+          _react2.default.createElement("li", {
+            "data-target": "#speakersCarouselIndicators",
+            "data-slide-to": "0",
+            className: "active"
+          }),
+          _react2.default.createElement("li", { "data-target": "#speakersCarouselIndicators", "data-slide-to": "1" }),
+          _react2.default.createElement("li", { "data-target": "#speakersCarouselIndicators", "data-slide-to": "2" })
+        )
+      ),
+      _react2.default.createElement(
+        "a",
+        {
+          className: "carousel-control-prev",
+          href: "#speakersCarouselIndicators",
+          role: "button",
+          "data-slide": "prev"
+        },
+        _react2.default.createElement("i", { className: "fa fa-angle-left", "aria-hidden": "true" })
+      ),
+      _react2.default.createElement(
+        "a",
+        {
+          className: "carousel-control-next",
+          href: "#speakersCarouselIndicators",
+          role: "button",
+          "data-slide": "next"
+        },
+        _react2.default.createElement("i", { className: "fa fa-angle-right", "aria-hidden": "true" })
+      )
+    )
+  );
+}
 
 /***/ }),
 
@@ -585,6 +1205,55 @@ function Speakers(props) {
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SpeakersHeader;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function SpeakersHeader() {
+  return _react2.default.createElement(
+    "div",
+    { className: "jumbo-common  speakers " },
+    _react2.default.createElement(
+      "div",
+      { className: "container-main" },
+      _react2.default.createElement(
+        "div",
+        { className: "row" },
+        _react2.default.createElement(
+          "div",
+          { className: "col-12" },
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-common__tip" },
+            "Name of the event"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "jumbo-common__content" },
+            _react2.default.createElement(
+              "h1",
+              { className: "jumbo-common__title" },
+              "The Speakers"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "jumbo-common__desc" },
+              "Silicon Valley Code Camp is the Perfect place to watch engaging and entertaining talks given by industry experts and luminaries, and meet with developers for enaging and motivating conversations around specific topics......"
+            )
+          )
+        )
+      )
+    )
+  );
+}
 
 /***/ }),
 
@@ -661,11 +1330,7 @@ var RouteNotFound = function (_Component) {
 
 RouteNotFound.defaultProps = {};
 
-// export default RouteNotFound;
-
-exports.default = {
-    component: RouteNotFound
-};
+exports.default = RouteNotFound;
 
 /***/ }),
 
@@ -2245,457 +2910,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/index.js":
-/*!**********************************************!*\
-  !*** ./node_modules/path-to-regexp/index.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
-
-/**
- * Expose `pathToRegexp`.
- */
-module.exports = pathToRegexp
-module.exports.parse = parse
-module.exports.compile = compile
-module.exports.tokensToFunction = tokensToFunction
-module.exports.tokensToRegExp = tokensToRegExp
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
-].join('|'), 'g')
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {string}  str
- * @param  {Object=} options
- * @return {!Array}
- */
-function parse (str, options) {
-  var tokens = []
-  var key = 0
-  var index = 0
-  var path = ''
-  var defaultDelimiter = options && options.delimiter || '/'
-  var res
-
-  while ((res = PATH_REGEXP.exec(str)) != null) {
-    var m = res[0]
-    var escaped = res[1]
-    var offset = res.index
-    path += str.slice(index, offset)
-    index = offset + m.length
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1]
-      continue
-    }
-
-    var next = str[index]
-    var prefix = res[2]
-    var name = res[3]
-    var capture = res[4]
-    var group = res[5]
-    var modifier = res[6]
-    var asterisk = res[7]
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path)
-      path = ''
-    }
-
-    var partial = prefix != null && next != null && next !== prefix
-    var repeat = modifier === '+' || modifier === '*'
-    var optional = modifier === '?' || modifier === '*'
-    var delimiter = res[2] || defaultDelimiter
-    var pattern = capture || group
-
-    tokens.push({
-      name: name || key++,
-      prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      asterisk: !!asterisk,
-      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
-    })
-  }
-
-  // Match any characters still remaining.
-  if (index < str.length) {
-    path += str.substr(index)
-  }
-
-  // If the path exists, push it onto the end.
-  if (path) {
-    tokens.push(path)
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {string}             str
- * @param  {Object=}            options
- * @return {!function(Object=, Object=)}
- */
-function compile (str, options) {
-  return tokensToFunction(parse(str, options))
-}
-
-/**
- * Prettier encoding of URI path segments.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeURIComponentPretty (str) {
-  return encodeURI(str).replace(/[\/?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeAsterisk (str) {
-  return encodeURI(str).replace(/[?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length)
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
-    }
-  }
-
-  return function (obj, opts) {
-    var path = ''
-    var data = obj || {}
-    var options = opts || {}
-    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i]
-
-      if (typeof token === 'string') {
-        path += token
-
-        continue
-      }
-
-      var value = data[token.name]
-      var segment
-
-      if (value == null) {
-        if (token.optional) {
-          // Prepend partial segment prefixes.
-          if (token.partial) {
-            path += token.prefix
-          }
-
-          continue
-        } else {
-          throw new TypeError('Expected "' + token.name + '" to be defined')
-        }
-      }
-
-      if (isarray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) {
-            continue
-          } else {
-            throw new TypeError('Expected "' + token.name + '" to not be empty')
-          }
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encode(value[j])
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment
-        }
-
-        continue
-      }
-
-      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
-
-      if (!matches[i].test(segment)) {
-        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-      }
-
-      path += token.prefix + segment
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {string} str
- * @return {string}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {string} group
- * @return {string}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1')
-}
-
-/**
- * Attach the keys as a property of the regexp.
- *
- * @param  {!RegExp} re
- * @param  {Array}   keys
- * @return {!RegExp}
- */
-function attachKeys (re, keys) {
-  re.keys = keys
-  return re
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {string}
- */
-function flags (options) {
-  return options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {!RegExp} path
- * @param  {!Array}  keys
- * @return {!RegExp}
- */
-function regexpToRegexp (path, keys) {
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g)
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        partial: false,
-        asterisk: false,
-        pattern: null
-      })
-    }
-  }
-
-  return attachKeys(path, keys)
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {!Array}  path
- * @param  {Array}   keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = []
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source)
-  }
-
-  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
-
-  return attachKeys(regexp, keys)
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {string}  path
- * @param  {!Array}  keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  return tokensToRegExp(parse(path, options), keys, options)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {!Array}          tokens
- * @param  {(Array|Object)=} keys
- * @param  {Object=}         options
- * @return {!RegExp}
- */
-function tokensToRegExp (tokens, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  var strict = options.strict
-  var end = options.end !== false
-  var route = ''
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i]
-
-    if (typeof token === 'string') {
-      route += escapeString(token)
-    } else {
-      var prefix = escapeString(token.prefix)
-      var capture = '(?:' + token.pattern + ')'
-
-      keys.push(token)
-
-      if (token.repeat) {
-        capture += '(?:' + prefix + capture + ')*'
-      }
-
-      if (token.optional) {
-        if (!token.partial) {
-          capture = '(?:' + prefix + '(' + capture + '))?'
-        } else {
-          capture = prefix + '(' + capture + ')?'
-        }
-      } else {
-        capture = prefix + '(' + capture + ')'
-      }
-
-      route += capture
-    }
-  }
-
-  var delimiter = escapeString(options.delimiter || '/')
-  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
-
-  // In non-strict mode we allow a slash at the end of match. If the path to
-  // match already ends with a slash, we remove it for consistency. The slash
-  // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
-  if (!strict) {
-    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
-  }
-
-  if (end) {
-    route += '$'
-  } else {
-    // In non-ending mode, we need the capturing groups to match as much as
-    // possible by using a positive lookahead to the end or next path segment.
-    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
-  }
-
-  return attachKeys(new RegExp('^' + route, flags(options)), keys)
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(string|RegExp|Array)} path
- * @param  {(Array|Object)=}       keys
- * @param  {Object=}               options
- * @return {!RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, /** @type {!Array} */ (keys))
-  }
-
-  if (isarray(path)) {
-    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
-  }
-
-  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
 
@@ -25712,7 +25926,7 @@ Switch.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js");
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/react-router/node_modules/path-to-regexp/index.js");
 /* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(path_to_regexp__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -25825,7 +26039,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js");
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/react-router/node_modules/path-to-regexp/index.js");
 /* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(path_to_regexp__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -25954,6 +26168,457 @@ var withRouter = function withRouter(Component) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (withRouter);
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/isarray/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/isarray/index.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/path-to-regexp/index.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/path-to-regexp/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = options && options.delimiter || '/'
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    var next = str[index]
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var modifier = res[6]
+    var asterisk = res[7]
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var partial = prefix != null && next != null && next !== prefix
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = res[2] || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      asterisk: !!asterisk,
+      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options))
+}
+
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeURIComponentPretty (str) {
+  return encodeURI(str).replace(/[\/?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeAsterisk (str) {
+  return encodeURI(str).replace(/[?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
+    }
+  }
+
+  return function (obj, opts) {
+    var path = ''
+    var data = obj || {}
+    var options = opts || {}
+    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          // Prepend partial segment prefixes.
+          if (token.partial) {
+            path += token.prefix
+          }
+
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {!RegExp} re
+ * @param  {Array}   keys
+ * @return {!RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {!Array}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        asterisk: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array}   keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {!Array}  keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}          tokens
+ * @param  {(Array|Object)=} keys
+ * @param  {Object=}         options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = '(?:' + token.pattern + ')'
+
+      keys.push(token)
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (!token.partial) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = prefix + '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  var delimiter = escapeString(options.delimiter || '/')
+  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
+  }
+
+  return attachKeys(new RegExp('^' + route, flags(options)), keys)
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {(Array|Object)=}       keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, /** @type {!Array} */ (keys))
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
+}
+
 
 /***/ }),
 
@@ -27977,7 +28642,7 @@ function resolvePathname(to) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.13.1
+/** @license React v0.13.2
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29199,9 +29864,9 @@ var warning = function() {};
 if (__DEV__) {
   var printWarning = function printWarning(format, args) {
     var len = arguments.length;
-    args = new Array(len > 2 ? len - 2 : 0);
-    for (var key = 2; key < len; key++) {
-      args[key - 2] = arguments[key];
+    args = new Array(len > 1 ? len - 1 : 0);
+    for (var key = 1; key < len; key++) {
+      args[key - 1] = arguments[key];
     }
     var argIndex = 0;
     var message = 'Warning: ' +
@@ -29274,4 +29939,4 @@ module.exports = g;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=clientbundle.js.map

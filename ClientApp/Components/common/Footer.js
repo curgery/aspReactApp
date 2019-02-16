@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="footer__disclaimer">
           <p>
             Code Stars Summit and Silicon Valley Code Camp (tm) are trademarks
-            of 73rd Street Associates (Copyright ©
+            of 73rd Street Associates (Copyright © 2019)
           </p>
           <p>
             Site built with ASP.NET, WebAPI2, React and more by &nbsp;
-            <strong>PeterKellner.net</strong>
+            <strong>RLGDevelopersLLC.com</strong>
           </p>
         </div>
       </div>
