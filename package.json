@@ -276,6 +276,7 @@
     "dev:build-client": "webpack --config webpack.client.js",
     "dev:server": "nodemon build/serverbundle.js",
     "dev:all": "npm-run-all --serial dev:build-server dev:build-client dev:server",
+    
     "prod:bundlefordeploy": "webpack --config webpack.client.js",
     "prod:cleanwwwroot": "rimraf ../WebApp/wwwroot",
     "prod:copytowwwroot": "cpx 'public/**/*' ../WebApp/wwwroot",
