@@ -15,4 +15,3 @@ export default function Home(props) {
 Home.propTypes = {
   notify: PropTypes.func,
 };
-
