@@ -2,7 +2,8 @@
   "devDependencies": {
     "webpack": "^4.29.4",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "redux-devtools-extension": "^2.13.5"
   },
   "name": "aspreactapp",
   "version": "1.0.0",
@@ -200,11 +201,14 @@
     "randomfill": "^1.0.4",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.2",
     "react-router-dom": "^4.2.2",
     "readable-stream": "^2.3.6",
     "readdirp": "^2.2.1",
+    "redux": "^4.0.1",
     "regex-not": "^1.0.2",
+    "remote-redux-devtools": "^0.5.0",
     "remove-trailing-separator": "^1.1.0",
     "repeat-element": "^1.1.3",
     "repeat-string": "^1.6.1",
@@ -276,7 +280,6 @@
     "dev:build-client": "webpack --config webpack.client.js",
     "dev:server": "nodemon build/serverbundle.js",
     "dev:all": "npm-run-all --serial dev:build-server dev:build-client dev:server",
-    
     "prod:bundlefordeploy": "webpack --config webpack.client.js",
     "prod:cleanwwwroot": "rimraf ../WebApp/wwwroot",
     "prod:copytowwwroot": "cpx 'public/**/*' ../WebApp/wwwroot",
