@@ -139,6 +139,7 @@
     "isobject": "^3.0.1",
     "json-parse-better-errors": "^1.0.2",
     "json-schema-traverse": "^0.4.1",
+    "json-server": "^0.14.0",
     "json5": "^1.0.1",
     "kind-of": "^3.2.2",
     "loader": "^2.1.1",
@@ -165,6 +166,7 @@
     "nanomatch": "^1.2.13",
     "neo-async": "^2.6.0",
     "node-libs-browser": "^2.2.0",
+    "nodemon": "^1.18.4",
     "normalize-path": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "object-copy": "^0.1.0",
@@ -283,7 +285,9 @@
     "prod:bundlefordeploy": "webpack --config webpack.client.js",
     "prod:cleanwwwroot": "rimraf ../WebApp/wwwroot",
     "prod:copytowwwroot": "cpx 'public/**/*' ../WebApp/wwwroot",
-    "prod:deploy": "npm-run-all --serial prod:bundlefordeploy prod:cleanwwwroot prod:copytowwwroot"
+    "prod:deploy": "npm-run-all --serial prod:bundlefordeploy prod:cleanwwwroot prod:copytowwwroot",
+    "jsonserver": "nodemon jsonserver.js",
+    "start": "npm-run-all --parallel start:dev jsonserver"
   },
   "author": "",
   "license": "ISC",
