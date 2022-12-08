@@ -93,7 +93,7 @@
     "events": "^3.0.0",
     "evp_bytestokey": "^1.0.3",
     "expand-brackets": "^2.1.4",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "extend-shallow": "^2.0.1",
     "extglob": "^2.0.4",
     "fast-deep-equal": "^2.0.1",
